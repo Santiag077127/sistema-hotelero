@@ -98,4 +98,3 @@ databaseChangeLog:
       rollback:
         - sqlFile:
             path: 05_rollback/01_ddl/03_tables/05_create_service_delivery_domain_tables.sql
-

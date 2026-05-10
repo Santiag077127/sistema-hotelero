@@ -1,21 +1,3 @@
-databaseChangeLog : 
-  - changeSet:
-      id: HU-04-create-security-domain
-      author: mrtinez.stiven@gmail.com
-      context: dev
-      labels: HU-04-dev
-      comment: Create security domain tables
-      changes:
-        - tagDatabase:
-            tag: v1.0.1
-        - sqlFile:
-            path: 01_ddl/03_tables/01_create_security_domain_tables.sql
-            endDelimiter: ";"
-            stripComments: false
-      rollback:
-        - sqlFile:
-            path: 05_rollback/01_ddl/03_tables/01_create_security_domain_tables.sql
-  
 -- Security domain
 CREATE TABLE person (
   id BIGSERIAL PRIMARY KEY,
@@ -164,19 +146,3 @@ CREATE TABLE module_view (
   CONSTRAINT fk_module_view_module FOREIGN KEY (module_id) REFERENCES module (id),
   CONSTRAINT fk_module_view_view FOREIGN KEY (view_id) REFERENCES app_view (id)
 );
-
-
-
-
--- Drop security domain
-DROP TABLE IF EXISTS module_view CASCADE;
-DROP TABLE IF EXISTS role_permission CASCADE;
-DROP TABLE IF EXISTS user_role CASCADE;
-DROP TABLE IF EXISTS app_user CASCADE;
-DROP TABLE IF EXISTS app_view CASCADE;
-DROP TABLE IF EXISTS module CASCADE;
-DROP TABLE IF EXISTS permission CASCADE;
-DROP TABLE IF EXISTS app_role CASCADE;
-DROP TABLE IF EXISTS person CASCADE;
-
-

@@ -16,7 +16,7 @@ databaseChangeLog :
         - sqlFile:
             path: 05_rollback/01_ddl/03_tables/01_create_security_domain_tables.sql
     
-    -changeSet:
+  - changeSet:
       id: HU-05-create-parameterization-domain
       author: mrtinez.stiven@gmail.com
       context: dev
@@ -34,16 +34,16 @@ databaseChangeLog :
         - sqlFile:
             path: 05_rollback/01_ddl/03_tables/02_create_parameterization_domain_tables.sql
       
-    -changeSet:
+  - changeSet:
       id: HU-06-create-service-delivery-domain-tables
-      author: mrtinez.stiven@gmail.com
+      author: emersoncaletmolano@gmail.com
       context: dev
       labels: HU-06-dev
       comment: Create service delivery domain tables
 
       changes:
         - tagDatabase:
-            tag: v1.0.2
+            tag: v1.0.3
         - sqlFile:
             path: 01_ddl/03_tables/03_create_service_delivery_domain_tables.sql
             endDelimiter: ";"
@@ -51,3 +51,21 @@ databaseChangeLog :
       rollback:
         - sqlFile:
             path: 05_rollback/01_ddl/03_tables/03_create_service_delivery_domain_tables.sql
+
+  - changeSet:
+      id: HU-07-create-billing-domain-tables
+      author: emersoncaletmolano@gmail.com
+      context: dev
+      labels: HU-07-dev
+      comment: Create billing domain tables
+
+      changes:
+        - tagDatabase:
+            tag: v1.0.4
+        - sqlFile:
+            path: 01_ddl/03_tables/04_create_billing_domain_tables.sql
+            endDelimiter: ";"
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: 05_rollback/01_ddl/03_tables/04_create_billing_domain_tables.sql

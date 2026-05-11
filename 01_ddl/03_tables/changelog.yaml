@@ -99,22 +99,3 @@ databaseChangeLog:
         - sqlFile:
             path: 05_rollback/01_ddl/03_tables/05_create_service_delivery_domain_tables.sql
 
-  - changeSet:
-      id: HU-09-create-billing-domain-tables
-      author: santiago
-      context: dev
-      labels: HU-09-dev
-      comment: Create billing domain tables
-
-      changes:
-        - tagDatabase:
-            tag: v1.0.4
-
-        - sqlFile:
-            path: 01_ddl/03_tables/06_create_billing_domain_tables.sql
-            endDelimiter: ";"
-            stripComments: false
-
-      rollback:
-        - sqlFile:
-            path: 05_rollback/01_ddl/03_tables/06_create_billing_domain_tables.sql

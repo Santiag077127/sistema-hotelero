@@ -58,6 +58,7 @@ databaseChangeLog:
       rollback:
         - sqlFile:
             path: 05_rollback/01_ddl/03_tables/03_create_distribution_domain_tables.sql
+
   - changeSet:
       id: HU-06-create-inventory-domain-tables
       author: santiago

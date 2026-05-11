@@ -78,6 +78,7 @@ databaseChangeLog:
       rollback:
         - sqlFile:
             path: 05_rollback/01_ddl/03_tables/04_create_inventory_domain_tables.sql
+
   - changeSet:
       id: HU-08-create-service-delivery-domain-tables
       author: santiago

@@ -1,21 +1,24 @@
-databaseChangeLog : 
+databaseChangeLog:
   - changeSet:
       id: HU-04-create-security-domain
       author: mrtinez.stiven@gmail.com
       context: dev
       labels: HU-04-dev
       comment: Create security domain tables
+
       changes:
         - tagDatabase:
             tag: v1.0.1
+
         - sqlFile:
             path: 01_ddl/03_tables/01_create_security_domain_tables.sql
             endDelimiter: ";"
             stripComments: false
+
       rollback:
         - sqlFile:
             path: 05_rollback/01_ddl/03_tables/01_create_security_domain_tables.sql
-    
+
   - changeSet:
       id: HU-05-create-parameterization-domain
       author: mrtinez.stiven@gmail.com
@@ -26,46 +29,52 @@ databaseChangeLog :
       changes:
         - tagDatabase:
             tag: v1.0.2
+
         - sqlFile:
             path: 01_ddl/03_tables/02_create_parameterization_domain_tables.sql
             endDelimiter: ";"
             stripComments: false
+
       rollback:
         - sqlFile:
             path: 05_rollback/01_ddl/03_tables/02_create_parameterization_domain_tables.sql
-      
+
   - changeSet:
-      id: HU-06-create-service-delivery-domain-tables
-      author: emersoncaletmolano@gmail.com
+      id: HU-06-create-distribution-domain-tables
+      author: mrtinez.stiven@gmail.com
       context: dev
       labels: HU-06-dev
-      comment: Create service delivery domain tables
+      comment: Create distribution domain tables
 
       changes:
         - tagDatabase:
             tag: v1.0.3
+
         - sqlFile:
-            path: 01_ddl/03_tables/03_create_service_delivery_domain_tables.sql
+            path: 01_ddl/03_tables/03_create_distribution_domain_tables.sql
             endDelimiter: ";"
             stripComments: false
+
       rollback:
         - sqlFile:
-            path: 05_rollback/01_ddl/03_tables/03_create_service_delivery_domain_tables.sql
+            path: 05_rollback/01_ddl/03_tables/03_create_distribution_domain_tables.sql
 
   - changeSet:
-      id: HU-07-create-billing-domain-tables
-      author: emersoncaletmolano@gmail.com
+      id: HU-06-create-inventory-domain-tables
+      author: santiago
       context: dev
-      labels: HU-07-dev
-      comment: Create billing domain tables
+      labels: HU-06-dev
+      comment: Create inventory domain tables
 
       changes:
         - tagDatabase:
-            tag: v1.0.4
+            tag: v1.0.3
+
         - sqlFile:
-            path: 01_ddl/03_tables/04_create_billing_domain_tables.sql
+            path: 01_ddl/03_tables/04_create_inventory_domain_tables.sql
             endDelimiter: ";"
             stripComments: false
+
       rollback:
         - sqlFile:
-            path: 05_rollback/01_ddl/03_tables/04_create_billing_domain_tables.sql
+            path: 05_rollback/01_ddl/03_tables/04_create_inventory_domain_tables.sql

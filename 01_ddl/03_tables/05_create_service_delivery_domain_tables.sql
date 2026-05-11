@@ -1,3 +1,4 @@
+
 -- Service delivery domain
 CREATE TABLE room_reservation (
   id BIGSERIAL PRIMARY KEY,

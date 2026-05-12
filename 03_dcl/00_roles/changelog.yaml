@@ -1,1 +1,19 @@
-databaseChangeLog: []
+databaseChangeLog: 
+- changeSet:
+      id: HU-12-create-user-instructor
+      author: Santiago
+      context: dev
+      labels: HU-12-dev
+      comment: Create instructor user
+      changes:
+        - tagDatabase:
+            tag: v1.0.1
+
+        - sqlFile:
+            path: 03_dcl/00_roles/01_create_user_instructor.sql
+            endDelimiter: ";"
+            stripComments: false
+
+      rollback:
+        - sqlFile:
+            path: 05_rollback/03_dcl/00_roles/01_create_user_instructor.sql

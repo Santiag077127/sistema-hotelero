@@ -5,7 +5,6 @@ databaseChangeLog:
       context: dev
       labels: HU-04-dev
       comment: Create security domain tables
-
       changes:
         - tagDatabase:
             tag: v1.0.1
@@ -25,7 +24,6 @@ databaseChangeLog:
       context: dev
       labels: HU-05-dev
       comment: Create parameterization domain tables
-
       changes:
         - tagDatabase:
             tag: v1.0.2
@@ -41,11 +39,10 @@ databaseChangeLog:
 
   - changeSet:
       id: HU-06-create-distribution-domain-tables
-      author: mrtinez.stiven@gmail.com
+      author: santiago
       context: dev
       labels: HU-06-dev
       comment: Create distribution domain tables
-
       changes:
         - tagDatabase:
             tag: v1.0.3
@@ -60,12 +57,11 @@ databaseChangeLog:
             path: 05_rollback/01_ddl/03_tables/03_create_distribution_domain_tables.sql
 
   - changeSet:
-      id: HU-06-create-inventory-domain-tables
+      id: HU-07-create-inventory-domain-tables
       author: santiago
       context: dev
-      labels: HU-06-dev
+      labels: HU-07-dev
       comment: Create inventory domain tables
-
       changes:
         - tagDatabase:
             tag: v1.0.3
@@ -85,7 +81,6 @@ databaseChangeLog:
       context: dev
       labels: HU-08-dev
       comment: Create service delivery domain tables
-
       changes:
         - tagDatabase:
             tag: v1.0.3
@@ -98,13 +93,13 @@ databaseChangeLog:
       rollback:
         - sqlFile:
             path: 05_rollback/01_ddl/03_tables/05_create_service_delivery_domain_tables.sql
+
   - changeSet:
       id: HU-09-create-billing-domain-tables
       author: santiago
       context: dev
       labels: HU-09-dev
       comment: Create billing domain tables
-
       changes:
         - tagDatabase:
             tag: v1.0.3
@@ -117,3 +112,23 @@ databaseChangeLog:
       rollback:
         - sqlFile:
             path: 05_rollback/01_ddl/03_tables/06_create_billing_domain_tables.sql
+
+  - changeSet:
+      id: HU-10-create-notification-domain-tables
+      author: santiago
+      context: dev
+      labels: HU-10-dev
+      comment: Create notification domain tables
+
+      changes:
+        - tagDatabase:
+            tag: v1.0.3
+
+        - sqlFile:
+            path: 01_ddl/03_tables/07_create_notificacion_domain_tables.sql
+            endDelimiter: ";"
+            stripComments: false
+
+      rollback:
+        - sqlFile:
+            path: 05_rollback/01_ddl/03_tables/07_create_notificacion_domain_tables.sql

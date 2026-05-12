@@ -1,1 +1,19 @@
-databaseChangeLog: []
+databaseChangeLog: 
+- changeSet:
+      id: HU-12-create-permissions-instructor
+      author: Santiago
+      context: dev
+      labels: HU-12-dev
+      comment: Create permissions for instructor role
+      changes:
+        - tagDatabase:
+            tag: v1.0.1
+
+        - sqlFile:
+            path: 03_dcl/01_grants/01_create_permissions.sql
+            endDelimiter: ";"
+            stripComments: false
+
+      rollback:
+        - sqlFile:
+            path: 05_rollback/03_dcl/01_grants/01_create_permissions.sql

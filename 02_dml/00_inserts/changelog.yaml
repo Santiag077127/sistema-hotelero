@@ -1,1 +1,18 @@
-databaseChangeLog: []
+databaseChangeLog:
+  - changeSet:
+      id: HU-13-insert-base-domain-data
+      author: santiago
+      context: dev
+      labels: HU-12-dev
+      comment: Insert base data for all hotel system domains ordered by dependencies
+      changes:
+        - sqlFile:
+            path: 02_dml/00_inserts/01_insert_base_domain_data.sql
+            endDelimiter: ";"
+            stripComments: false
+
+      rollback:
+        - sqlFile:
+            path: 05_rollbacks/02_dml/00_inserts/01_insert_base_domain_data.sql
+            endDelimiter: ";"
+            stripComments: false
